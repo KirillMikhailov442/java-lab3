@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import ru.mikhailov.buildings.House;
 import ru.mikhailov.geometry.Dot;
+import ru.mikhailov.math.MyMath;
 import ru.mikhailov.structures.ImmutableArray;
 import ru.mikhailov.weapons.AutomaticRifle;
 import ru.mikhailov.weapons.Pistol1_5;
@@ -82,7 +83,7 @@ public class Main {
             AutomaticRifle automaticRifle2 = new AutomaticRifle(10);
             AutomaticRifle automaticRifle3 = new AutomaticRifle(10, 2);
 
-            System.out.println(automaticRifle3.shootForNSeconds(2));
+            System.out.println(automaticRifle3.shootForNSeconds(10));
         }
 
         else if (task == 4 && subtask == 1) {
@@ -113,6 +114,23 @@ public class Main {
 
             System.out.println(dot1.equals(dot2));
             System.out.println(dot1.equals(dot3));
+        }
+
+        else if (task == 7 && subtask == 3) {
+            try {
+                String x = "";
+                String y = "";
+
+                System.out.print("Введите x: ");
+                x = scanner.next();
+
+                System.out.print("Введите y: ");
+                y = scanner.next();
+
+                System.out.println(MyMath.power(x, y));
+            } catch (NumberFormatException ex) {
+                System.out.println("Вы ввели не числа в x или y");
+            }
         }
 
         else if (task == 8 && subtask == 2) {
